@@ -12,7 +12,7 @@ stage('Checkout')
 {
 agent { label 'demo' }
 steps {
-git branch: 'newfeature', credentialsId: 'GithubCred', url: 'https://github.com/wezvatechnologies/AIBootCamp-build-backend-springboot.git'
+git branch: 'feature', credentialsId: 'GithubCred', url: 'https://github.com/Karnamakshay/Build_Backend_Springboot.git'
 }
 }
 
@@ -109,7 +109,7 @@ stage('Smoke Deploy')
 {
    agent { label 'kind' }
    steps {
-       git branch: 'newfeature', credentialsId: 'GithubCred', url: 'https://github.com/wezvatechnologies/AIBootCamp-build-backend-springboot.git'
+       git branch: 'newfeature', credentialsId: 'GithubCred', url: 'https://github.com/Karnamakshay/Build_Backend_Springboot.git'
 
        echo "Preparing KIND cluster ..."
      sh "kubectl create namespace wezvatechfb || true"
